@@ -1,0 +1,40 @@
+{
+  "name": "indepth",
+  "description": "get and set nested values with arrays of keys and indices",
+  "version": "0.1.0",
+  "author": {
+    "name": "Kyle E. Mitchell",
+    "email": "kyle@kemitchell.com",
+    "url": "http://kemitchell.com/"
+  },
+  "bugs": "https://github.com/kemitchell/indepth.js/issues",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "check-versions": "0.0.1",
+    "istanbul": "^0.3.5",
+    "jscs": "^1.11.0",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0"
+  },
+  "homepage": "https://github.com/kemitchell/indepth.js",
+  "keywords": [
+    "getters",
+    "objects",
+    "properties",
+    "setters",
+    "utilities"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kemitchell/indepth.js.git"
+  },
+  "scripts": {
+    "check": "check-versions -m",
+    "coverage": "istanbul cover _mocha && istanbul check-coverage coverage/coverage.json",
+    "lint": "jshint index.js test && jscs index.js test",
+    "pre-commit": "npm run lint && npm run check && npm run coverage",
+    "test": "mocha",
+    "travis-ci": "npm run pre-commit"
+  }
+}
