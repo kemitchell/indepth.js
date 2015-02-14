@@ -28,8 +28,13 @@ indepth.setp(anObject, ['string', 0, 'another'], 'new value');
 indepth.setp === indepth.setWithParents;
 // true
 
-var onObject = {a: 'some value', b: 'other value'};
-indepth.del(anObject, ['a']);
+var objectWithKeys = {a: 'some value', b: 'other value'};
+indepth.del(objectWithKeys, ['a']);
 anObject.a;
-// undefined
+// now undefined
+
+var objectWithArray = {a: [0, 1, 2]};
+indepth.del(objectWithArray, ['a', 1]);
+anObject.a;
+// [0, 2]
 ```

@@ -70,7 +70,7 @@ exports.del = function set(object, keys, onFailure) {
       var firstKey = keys[0];
       if (length === 1) {
         if (Array.isArray(object)) {
-          object[firstKey] = undefined;
+          object.splice(firstKey, 1);
         } else {
           delete object[firstKey];
         }

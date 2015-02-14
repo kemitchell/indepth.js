@@ -16,11 +16,13 @@ describe('del()', function() {
     }).to.throw(Error);
   });
 
-  it('sets nested array elements to undefined', function() {
+  it('deletes nested array elements', function() {
     expect(del(this.object, ['array', 1]))
       .to.be.true();
     expect(this.object.array[1])
-      .to.be.undefined();
+      .to.equal(2);
+    expect(this.object.array.length)
+      .to.equal(3);
   });
 
   it('deletes nested object properties', function() {
