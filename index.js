@@ -61,4 +61,31 @@ exports.setWithParents = function setP(object, keys, value) {
 
 exports.setp = exports.setWithParents;
 
+exports.del = function set(object, keys, onFailure) {
+  var length = keys.length;
+  if (length === 0) {
+    throw new Error('Empty keys array');
+  } else {
+    try {
+      var firstKey = keys[0];
+      if (length === 1) {
+        if (Array.isArray(object)) {
+          object[firstKey] = undefined;
+        } else {
+          delete object[firstKey];
+        }
+        return true;
+      } else {
+        return set(object[firstKey], keys.slice(1), onFailure);
+      }
+    } catch (e) {
+      if (onFailure) {
+        return onFailure;
+      } else {
+        throw e;
+      }
+    }
+  }
+};
+
 exports.version = '0.1.0';
