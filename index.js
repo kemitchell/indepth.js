@@ -88,4 +88,4 @@ exports.del = function set(object, keys, onFailure) {
   }
 };
 
-exports.version = '0.1.1';
+exports.version = '0.1.2';
