@@ -27,4 +27,9 @@ indepth.setp(anObject, ['string', 0, 'another'], 'new value');
 
 indepth.setp === indepth.setWithParents;
 // true
+
+var onObject = {a: 'some value', b: 'other value'};
+indepth.del(anObject, ['a']);
+anObject.a;
+// undefined
 ```
