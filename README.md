@@ -1,7 +1,7 @@
 indepth
 =======
 
-get and set nested values with arrays of keys and indices
+get, set, and delete nested values with arrays of keys and indices
 
 [![npm version](https://img.shields.io/npm/v/indepth.svg)](https://www.npmjs.com/package/indepth)
 [![build status](https://img.shields.io/travis/kemitchell/indepth.js.svg)](http://travis-ci.org/kemitchell/indepth.js)
