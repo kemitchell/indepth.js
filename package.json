@@ -1,7 +1,7 @@
 {
   "name": "indepth",
   "description": "get, set, and delete nested values with arrays of keys and indices",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "Kyle E. Mitchell",
     "email": "kyle@kemitchell.com",

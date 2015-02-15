@@ -117,4 +117,4 @@ exports.insert = function insert(object, keys, value, onFailure) {
   }
 };
 
-exports.version = '0.1.2';
+exports.version = '0.1.3';
