@@ -61,7 +61,7 @@ exports.setWithParents = function setP(object, keys, value) {
 
 exports.setp = exports.setWithParents;
 
-exports.del = function set(object, keys, onFailure) {
+exports.del = function del(object, keys, onFailure) {
   var length = keys.length;
   if (length === 0) {
     throw new Error('Empty keys array');
@@ -76,7 +76,36 @@ exports.del = function set(object, keys, onFailure) {
         }
         return true;
       } else {
-        return set(object[firstKey], keys.slice(1), onFailure);
+        return del(object[firstKey], keys.slice(1), onFailure);
+      }
+    } catch (e) {
+      if (onFailure) {
+        return onFailure;
+      } else {
+        throw e;
+      }
+    }
+  }
+};
+
+exports.insert = function insert(object, keys, value, onFailure) {
+  var length = keys.length;
+  if (length === 0) {
+    throw new Error('Empty keys array');
+  } else {
+    try {
+      var firstKey = keys[0];
+      if (length === 1) {
+        if (Array.isArray(object)) {
+          object.splice(firstKey, 0, value);
+        } else {
+          object[firstKey] = value;
+        }
+        return true;
+      } else {
+        return insert(
+          object[firstKey], keys.slice(1), value, onFailure
+        );
       }
     } catch (e) {
       if (onFailure) {

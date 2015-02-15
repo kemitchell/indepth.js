@@ -37,4 +37,8 @@ var objectWithArray = {a: [0, 1, 2]};
 indepth.del(objectWithArray, ['a', 1]);
 anObject.a;
 // [0, 2]
+
+indepth.insert(objectWithArray, ['a', 0], 'X');
+anObject.a;
+// ['X', 0, 2]
 ```
